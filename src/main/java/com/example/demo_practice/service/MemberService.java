@@ -10,7 +10,14 @@ import java.util.Optional;
 public class MemberService {
 
 
-    private final MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+
+
+    private final MemoryMemberRepository memberRepository;
+
+    public MemberService(MemoryMemberRepository memberRepository){// DI
+        this.memberRepository = memberRepository;
+    }
+
 
     public long join(Member member) {
 
@@ -35,7 +42,6 @@ public class MemberService {
 
     public Optional<Member> findOneMember(Long memberId){
         return memberRepository.findById(memberId);
-
 
     }
 }
