@@ -3,18 +3,21 @@ package com.example.demo_practice.service;
 import com.example.demo_practice.domain.Member;
 import com.example.demo_practice.repository.MemberRepository;
 import com.example.demo_practice.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
 
 
 
-    private final MemoryMemberRepository memberRepository;
-
-    public MemberService(MemoryMemberRepository memberRepository){// DI
+    private final MemberRepository memberRepository;
+    @Autowired
+    public MemberService(MemberRepository memberRepository){// DI
         this.memberRepository = memberRepository;
     }
 
