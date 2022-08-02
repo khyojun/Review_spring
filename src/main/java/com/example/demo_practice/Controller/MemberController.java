@@ -21,9 +21,6 @@ public class MemberController {
         this.memberService=memberService;
     }
 
-
-
-
     @GetMapping("/members/new")
     public String createForm(){
         return "members/createForm";
@@ -41,9 +38,6 @@ public class MemberController {
         return "redirect:/";
 
     }
-
-
-
     @GetMapping(value = "/members")
     public String list(Model model){
         List<Member> members = memberService.findMembers();
